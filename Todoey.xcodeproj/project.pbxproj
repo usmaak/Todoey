@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		5489468520E43B3200ED5EF1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5489468420E43B3200ED5EF1 /* AppDelegate.swift */; };
-		5489468720E43B3200ED5EF1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5489468620E43B3200ED5EF1 /* ViewController.swift */; };
+		5489468720E43B3200ED5EF1 /* TodoListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5489468620E43B3200ED5EF1 /* TodoListViewController.swift */; };
 		5489468A20E43B3200ED5EF1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5489468820E43B3200ED5EF1 /* Main.storyboard */; };
 		5489468C20E43B3200ED5EF1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5489468B20E43B3200ED5EF1 /* Assets.xcassets */; };
 		5489468F20E43B3200ED5EF1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5489468D20E43B3200ED5EF1 /* LaunchScreen.storyboard */; };
@@ -17,7 +17,7 @@
 /* Begin PBXFileReference section */
 		5489468120E43B3200ED5EF1 /* Todoey.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Todoey.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5489468420E43B3200ED5EF1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		5489468620E43B3200ED5EF1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		5489468620E43B3200ED5EF1 /* TodoListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoListViewController.swift; sourceTree = "<group>"; };
 		5489468920E43B3200ED5EF1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5489468B20E43B3200ED5EF1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5489468E20E43B3200ED5EF1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -55,7 +55,7 @@
 			isa = PBXGroup;
 			children = (
 				5489468420E43B3200ED5EF1 /* AppDelegate.swift */,
-				5489468620E43B3200ED5EF1 /* ViewController.swift */,
+				5489468620E43B3200ED5EF1 /* TodoListViewController.swift */,
 				5489468820E43B3200ED5EF1 /* Main.storyboard */,
 				5489468B20E43B3200ED5EF1 /* Assets.xcassets */,
 				5489468D20E43B3200ED5EF1 /* LaunchScreen.storyboard */,
@@ -91,7 +91,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0920;
-				LastUpgradeCheck = 0920;
+				LastUpgradeCheck = 0940;
 				ORGANIZATIONNAME = "Scott Kilbourn";
 				TargetAttributes = {
 					5489468020E43B3200ED5EF1 = {
@@ -136,7 +136,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5489468720E43B3200ED5EF1 /* ViewController.swift in Sources */,
+				5489468720E43B3200ED5EF1 /* TodoListViewController.swift in Sources */,
 				5489468520E43B3200ED5EF1 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -177,6 +177,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -184,6 +185,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -234,6 +236,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -241,6 +244,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;

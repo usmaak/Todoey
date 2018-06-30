@@ -10,26 +10,13 @@ import UIKit
 
 class TodoListViewController: UITableViewController {
     var itemArray = [Item]()
-    let defaults = UserDefaults.standard
-    
+
+    //File path to documents folder.
+    let dataFilePath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first?.appendingPathComponent("Items.plist")
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let newItem = Item()
-        newItem.title = "Find Mike"
-        itemArray.append(newItem)
-
-        let newItem2 = Item()
-        newItem2.title = "Buy Eggos"
-        itemArray.append(newItem2)
-        
-        let newItem3 = Item()
-        newItem3.title = "Kill Demogorgon"
-        itemArray.append(newItem3)
-        
-        if let items = defaults.array(forKey: "TodoListArray") as? [Item] {
-            itemArray = items
-        }
+        loadItems()        
     }
 
     //MARK - Tableview Datasource Methods
@@ -57,7 +44,6 @@ class TodoListViewController: UITableViewController {
         let cell = tableView.cellForRow(at: indexPath)
         
         itemArray[indexPath.row].done = !itemArray[indexPath.row].done
-        
         if itemArray[indexPath.row].done {
             cell?.accessoryType = .checkmark
         }
@@ -65,8 +51,7 @@ class TodoListViewController: UITableViewController {
             cell?.accessoryType = .none
         }
 
-        //defaults.set(itemArray, forKey: "TodoListArray")
-        tableView.reloadRows(at: [indexPath], with: .automatic)
+        saveItems()
         
         tableView.deselectRow(at: indexPath, animated: true)
     }
@@ -80,8 +65,7 @@ class TodoListViewController: UITableViewController {
                 let item = Item()
                 item.title = alert.textFields![0].text!
                 self.itemArray.append(item)
-                self.tableView.reloadData()
-                self.defaults.set(self.itemArray, forKey: "TodoListArray")
+                self.saveItems()
             }
             else {
                 let nopeAlert = UIAlertController(title: "Unable to add a blank item", message: "", preferredStyle: .alert)
@@ -98,5 +82,34 @@ class TodoListViewController: UITableViewController {
         present(alert, animated: true, completion: nil)
     }
     
+    
+    //MARK - Model Manipulation Methods
+    
+    func loadItems() {
+        if let data = try? Data(contentsOf: dataFilePath!) {
+            let decoder = PropertyListDecoder()
+            
+            do {
+                itemArray = try decoder.decode([Item].self, from: data)
+            }
+            catch {
+                print("Error decoding item array, \(error)")
+            }
+        }
+    }
+    
+    func saveItems() {
+        let encoder = PropertyListEncoder()
+        
+        do {
+            let data = try encoder.encode(itemArray)
+            try data.write(to: dataFilePath!)
+        }
+        catch {
+            print("Error encoding item array, \(error)")
+        }
+        
+        tableView.reloadData()
+    }
 }
 
